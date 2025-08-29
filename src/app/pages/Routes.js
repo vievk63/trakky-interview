@@ -4,6 +4,7 @@ import Task2 from "./Task2";
 import Dashboard from ".";
 import Task1 from "./Taks1";
 import Task3 from "./Task3";
+import Task4 from "./Task4";
 
 const CustomRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const CustomRoutes = () => {
       <Route path="/task2" element={<Task2 />}></Route>
       <Route path="/task1" element={<Task1 />}></Route>
       <Route path="/task3" element={<Task3 />}></Route>
+      <Route path="/task3-page2" element={<Task4 />}></Route>
     </Routes>
   );
 };

@@ -26,6 +26,12 @@ function Dashboard() {
         >
           Task 3
         </div>
+        <div
+          onClick={() => handleNavigate("task3-page2")}
+          className="h-[60px] w-[120px] rounded-md bg-yellow-400 flex items-center justify-center"
+        >
+          Task-3-page-2
+        </div>
       </div>
     </>
   );

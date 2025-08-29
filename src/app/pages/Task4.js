@@ -11,7 +11,7 @@ import Restaurant from "../component/common/Restaurant";
 import { Carousel } from "@material-tailwind/react";
 import CarouselCard from "../component/common/CarouselCard";
 
-function Task3() {
+function Task4() {
   const carouselData = [
     {
       title: "Flat 50% off",
@@ -162,57 +162,121 @@ function Task3() {
       trophyText: "Chefs Special",
     },
   ];
-
+  const flash = [
+    { text: "Flat 50% Off 1" },
+    { text: "Flat 50% Off 2" },
+    { text: "Flat 50% Off 3" },
+    { text: "Flat 50% Off 1" },
+    { text: "Flat 50% Off 2" },
+    { text: "Flat 50% Off 3" },
+    { text: "Flat 50% Off 3" },
+  ];
   return (
     <>
-      <div className="md:p-[20px] p-[8px] flex flex-col space-y-4">
-        <div className="flex items-center justify-between w-full ">
-          <div className="flex flex-col items-start">
+      <div className=" flex flex-col space-y-4">
+        <div className="flex flex-col md:p-[20px]  p-[8px] space-y-[10px] bg-red-700">
+          <div className="flex items-center  justify-between w-full ">
+            <div className="flex flex-col items-start">
+              <div className="flex items-center space-x-1">
+                <p className="">
+                  <IoMdHome className="text-white text-[24px]" />
+                </p>
+                <p className="font-bold text-white text-[18px]">Home</p>
+                <p>
+                  <FaAngleDown className="text-gray-100" />
+                </p>
+              </div>
+              <div className="text-[14px] text-gray-100 md:text-[18px]">
+                Samras Bouys Hostel ,123 feert ring road..
+              </div>
+            </div>
             <div className="flex items-center space-x-1">
-              <p className="">
-                <IoMdHome className="text-orange-600 text-[24px]" />
-              </p>
-              <p className="font-bold text-[18px]">Home</p>
-              <p>
-                <FaAngleDown />
-              </p>
-            </div>
-            <div className="text-[14px] md:text-[18px]">
-              Samras Bouys Hostel ,123 feert ring road..
+              <div className=" w-[60px] md:w-[70px] py-2 rounded-full text-[19px] font-bold text-white flex items-center justify-center bg-orange-500 relative">
+                <span className="absolute top-[-8px] text-[13px] md:text-[15px] text-white">
+                  BUY
+                </span>
+                One
+              </div>
+              <div className="h-[30px] w-[30px] rounded-full flex items-center justify-center bg-blue-gray-700">
+                <FaUser className="text-white" />
+              </div>
             </div>
           </div>
-          <div className="flex items-center space-x-1">
-            <div className=" w-[60px] md:w-[70px] py-2 rounded-full text-[19px] font-bold text-white flex items-center justify-center bg-orange-500 relative">
-              <span className="absolute top-[-8px] text-[13px] md:text-[15px] text-white">
-                BUY
-              </span>
-              One
+          {/* ---------------------------------- */}
+
+          <div className="flex items-center bg-white space-x-4  pr-[15px] border border-gray-400 rounded-[10px]">
+            <input
+              type="text"
+              placeholder="Search For Cherimts Special"
+              className=" px-2 py-2 w-full outline-none rounded"
+            />
+            <div className="flex items-center space-x-2">
+              <p className="text-[18px] pr-[8px] border-r border-blue-gray-800">
+                <CiSearch />
+              </p>
+              <p className="text-orange-600 text-[18px]">
+                <FaMicrophone />
+              </p>
             </div>
-            <div className="h-[30px] w-[30px] rounded-full flex items-center justify-center bg-blue-gray-700">
-              <FaUser className="text-white" />
+          </div>
+          <div>
+            <img src={Images.Santa} className="w-full h-[250px] object-fill" />
+          </div>
+          <div className="text-center py-2">
+            <div className="flex items-center justify-center space-x-4">
+              <div className="border-t border-white w-32"></div>
+              <p className="text-xl font-bold text-yellow-400">
+                Get Flat ₹200 OFF
+              </p>
+              <div className="border-t border-white w-32"></div>
             </div>
+          </div>
+          <div className="flex items-center justify-center md:px-0 px-[15px] overflow-x-auto space-x-10">
+            {flash.map((item, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div>
+                  <img
+                    src={Images.Flash}
+                    alt={`Flash Banner ${index}`}
+                    className="w-full min-w-[130px] h-[130px] md:h-[150px] rounded-full object-fill"
+                  />
+                </div>
+                <div className=" text-[18px] md:text-[24px] font-bold text-white">
+                  {item.text}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-[#8B2C2C]  -translate-y-[16px] py-2">
+          <div className="flex items-center justify-center overflow-x-auto  md:px-0  px-[15px] space-x-2 md:space-x-4">
+            <p className="text-white whitespace-nowrap text-[18px] md:text-[25px] font-normal">
+              Powered By
+            </p>
+
+            <img
+              src={Images.Dominos}
+              className="h-[60px] md:h-[90px] rounded-md object-cover"
+            />
+            <div className="border-l border-white h-[40px]"></div>
+            <img
+              src={Images.Nic}
+              className="h-[60px] md:h-[90px] rounded-md object-cover"
+            />
+            <div className="border-l border-white h-[40px]"></div>
+            <p className="text-white text-[18px] md:text-[25px] font-normal">
+              Amazon
+            </p>
+
+            <img
+              src={Images.Pay}
+              className="h-[60px] md:h-[90px] rounded-md object-cover"
+            />
           </div>
         </div>
         {/* ---------------------------------- */}
 
-        <div className="flex items-center space-x-4  pr-[15px] border border-gray-400 rounded">
-          <input
-            type="text"
-            placeholder="Search For Cherimts Special"
-            className=" px-2 py-2 w-full outline-none rounded"
-          />
-          <div className="flex items-center space-x-2">
-            <p className="text-[18px] pr-[8px] border-r border-blue-gray-800">
-              <CiSearch />
-            </p>
-            <p className="text-orange-600 text-[18px]">
-              <FaMicrophone />
-            </p>
-          </div>
-        </div>
-        {/* ---------------------------------- */}
-
-        <div>
+        <div className="md:p-[20px] p-[8px]">
           <Carousel className="rounded-xl">
             {carouselData.map((item, index) => (
               <CarouselCard
@@ -227,11 +291,11 @@ function Task3() {
           </Carousel>
         </div>
         {/* ---------------------------------- */}
-        <div className="">
+        <div className="md:p-[20px] p-[8px]">
           <OfferCard data={offersData} />
         </div>
         {/* ---------------------------------- */}
-        <div className="py-[25px] flex flex-col space-y-5">
+        <div className="py-[25px] md:p-[20px] p-[8px] flex flex-col space-y-5">
           <div className="text-[20px] md:text-[28px] font-normal mb-4 uppercase">
             Gaurang, whats on your mind?
           </div>
@@ -275,11 +339,11 @@ function Task3() {
           </div>
         </div>
         {/* ---------------------------------- */}
-        <div className="">
+        <div className="md:p-[20px] p-[8px]">
           <OfferCard2 data={offersData} />
         </div>
         {/* ---------------------------------- */}
-        <div className="flex items-center w-full px-[10px] justify-center space-x-4 overflow-x-auto">
+        <div className="flex md:p-[20px] p-[8px] items-center w-full px-[10px] justify-center space-x-4 overflow-x-auto">
           <div className="flex items-center space-x-2 px-[14px] py-[10px] rounded-full border border-brown-100">
             <p className="font-bold md:text-[22px] text-[16px]">Filter</p>
             <p className="text-[30px]">
@@ -328,7 +392,7 @@ function Task3() {
           </div>
         </div>
         {/* ---------------------------------- */}
-        <div className="">
+        <div className="md:p-[20px] p-[8px]">
           <Restaurant data={restaurantData} />
         </div>
       </div>
@@ -336,4 +400,4 @@ function Task3() {
   );
 }
 
-export default Task3;
+export default Task4;
